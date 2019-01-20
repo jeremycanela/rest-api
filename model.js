@@ -1,8 +1,10 @@
 'use strict';
 
+// Modules
 const mongoose = require("mongoose");
 const {Schema} = mongoose;
 
+// User Schema
 const UserSchema = new Schema({
   firstName: {type: String, required: [true, "First name is required."]},
   lastName: {type: String, required: [true, "Last name is required."]},
@@ -10,6 +12,7 @@ const UserSchema = new Schema({
   password: {type: String, required: [true, "Password is required."]}
 });
 
+// Course Schema
 const CourseSchema = new Schema({
   user: { type: Schema.Types.ObjectId, ref: 'User' },
   title: {type: String, required: [true, "Title is required."]},
